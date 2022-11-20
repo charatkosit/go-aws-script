@@ -1,0 +1,20 @@
+version: '3.1'
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3308:3306
+    volumes:
+      - "./data:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: testhaha
+    command: ['mysqld', '--character-set-server=utf8', '--collation-server=utf8_general_ci']
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8000:80
+    environment:
+      PMA_PASSWORD: 1234
+      PMA_USER: root
+      PMA_HOSTS: mysql
