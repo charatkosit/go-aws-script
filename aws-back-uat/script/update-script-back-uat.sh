@@ -42,6 +42,11 @@ chmod +x /home/ec2-user/docker-mysql-pma/*.*
 #remove temp
 rm -rf temp
 
+#run mysql-pma
+cd /home/ec2-user/docker-mysql-pma/
+docker-compose up -d
+cd /home/ec2-user
+
 # ls
 ls -l
 ls -l script
