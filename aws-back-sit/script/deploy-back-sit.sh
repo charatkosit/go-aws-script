@@ -11,4 +11,4 @@ docker images
 #pull and run
 docker pull charat/go-back-sit:latest
 docker run -p 3000:3000 -d charat/go-back-sit:latest
-curl -X POST -H "Authorization: Bearer ${tokenLineAB}" -F "message=PROD new version http://goapisit.ddns.net:3000/api/v1" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineAB}" -F "message=SIT new version http://goapisit.ddns.net:3000/api/v1" https://notify-api.line.me/api/notify

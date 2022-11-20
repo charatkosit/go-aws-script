@@ -11,4 +11,4 @@ docker images
 #pull and run
 docker pull charat/go-back-uat:latest
 docker run -p 3000:3000 -d charat/go-back-uat:latest
-curl -X POST -H "Authorization: Bearer ${tokenLineAB}" -F "message=PROD new version http://goapiuat.ddns.net:3000/api/v1" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineAB}" -F "message=UAT new version http://goapiuat.ddns.net:3000/api/v1" https://notify-api.line.me/api/notify
