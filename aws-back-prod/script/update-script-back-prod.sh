@@ -17,9 +17,9 @@ export tokenLineAF=K35RgggwSNxmv2UGVT5mGmO5wAwCAuFQuNodqLh5gCG
 export tokenLineAB=ImU3zoEwmB44IwAtpeoqPZihzoLld0xUVeSiy1tD1tz
 EOF
 
-#copy /data to rest
-mkdir data
-cp /home/ec2-user/docker-mysql-pma/data/*.*  /home/ec2-user/data
+#backup /data
+cp -R /home/ec2-user/docker-mysql-pma/data /home/ec2-user/data_backup
+
 #remove 
 rm -rf docker-mysql-pma
 rm -rf script
@@ -29,13 +29,14 @@ mkdir script
 mkdir docker-mysql-pma
 mkdir docker-mysql-pma/data
 
-#/data to /docker-mysql-pwa
-cp /home/ec2-user/data/*.* /home/ec2-user/docker-mysql-pma/data
-rm -rf /home/ec2-user/data
+#restore /data to /docker-mysql-pwa
+cp -R /home/ec2-user/data_backup /home/ec2-user/docker-mysql-pma/data
+rm -rf /home/ec2-user/data_backup
+
 
 #copy new
-cp /home/ec2-user/temp/aws-back-uat/script/*.* /home/ec2-user/script/
-cp /home/ec2-user/temp/aws-back-uat/docker-mysql-pma/*.* /home/ec2-user/docker-mysql-pma/
+cp /home/ec2-user/temp/aws-back-prod/script/*.* /home/ec2-user/script/
+cp /home/ec2-user/temp/aws-back-prod/docker-mysql-pma/*.* /home/ec2-user/docker-mysql-pma/
 #chmod
 chmod +x /home/ec2-user/script/*.*
 chmod +x /home/ec2-user/docker-mysql-pma/*.*
