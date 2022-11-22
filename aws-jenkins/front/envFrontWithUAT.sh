@@ -3,7 +3,7 @@
 tagname=`cat /var/lib/jenkins/workspace/go-front-uat/package.json |grep "version" |cut -d'"' -f 4`
 release=`echo $tagname |cut -d ' ' -f 1`
 
-backendUrl='http://goapiuat.ddns.net:3000/'
+backendUrl='http://18.205.103.4:3000/'
 sapUrl=''
 sapApiToken=''
 stage='UAT' 
