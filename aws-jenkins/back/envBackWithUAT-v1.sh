@@ -12,3 +12,5 @@ releaseBU=`echo $tagnameBU |cut -d ' ' -f 1`
 sed -i -e "s|%release%|${releaseBU}|g" /var/lib/jenkins/workspace/go-back-uat/src/environments/environment.ts
 #debug
 cat /var/lib/jenkins/workspace/go-back-uat/src/environments/environment.ts
+
+curl -X POST -H "Authorization: Bearer ${tokenLineB}" -F "message=UAT Build Code ${releaseBU} OK" https://notify-api.line.me/api/notify

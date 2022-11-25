@@ -10,3 +10,6 @@ docker images
 docker rmi $(docker images go-back-prod --format "{{.ID}}") -f
 #docker rmi -f $(docker images --format "{{.ID}}" --filter "dangling=true")
 docker images
+
+
+curl -X POST -H "Authorization: Bearer ${tokenLineB}" -F "message=PROD push DockerHub ${releasePBP} OK" https://notify-api.line.me/api/notify

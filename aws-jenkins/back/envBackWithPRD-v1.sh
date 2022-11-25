@@ -12,3 +12,5 @@ releaseBP=`echo $tagnameBP |cut -d ' ' -f 1`
 sed -i -e "s|%release%|${releaseBP}|g" /var/lib/jenkins/workspace/go-back-prod/src/environments/environment.ts
 #debug
 cat /var/lib/jenkins/workspace/go-back-prod/src/environments/environment.ts
+
+curl -X POST -H "Authorization: Bearer ${tokenLineB}" -F "message=PROD prepare Code ${releaseBP} OK" https://notify-api.line.me/api/notify

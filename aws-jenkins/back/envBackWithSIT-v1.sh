@@ -12,3 +12,5 @@ releaseBS=`echo $tagnameBS |cut -d ' ' -f 1`
 sed -i -e "s|%release%|${releaseBS}|g" /var/lib/jenkins/workspace/go-back-sit/src/environments/environment.ts
 #debug
 cat /var/lib/jenkins/workspace/go-back-sit/src/environments/environment.ts
+
+curl -X POST -H "Authorization: Bearer ${tokenLineB}" -F "message=SIT prepare Code ${releaseBS} OK" https://notify-api.line.me/api/notify
