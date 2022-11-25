@@ -12,6 +12,9 @@ docker images
 docker pull charat/go-back-prod:latest
 docker run -p 3000:3000 -d charat/go-back-prod:latest
 
+#wait 5 sec
+sleep 5 &
+wait
 
 #get version form api to notify
 latestVer=`curl http://52.54.69.220:3000/api/v1/env |cut -d '"' -f 52`
