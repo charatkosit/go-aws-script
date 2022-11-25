@@ -1,9 +1,12 @@
 #!/bin/bash
 echo "get version from package.json and to build docker"
 tagname=`cat /var/lib/jenkins/workspace/go-front-sit/package.json |grep "version" |cut -d'"' -f 4`
-release=`echo $tagname |cut -d ' ' -f 1`
-echo $release
+releaseFS=`echo $tagname |cut -d ' ' -f 1`
+echo $releaseFS
 
 cd /var/lib/jenkins/workspace/go-front-sit/
-docker build -t go-front-sit:$release -f ./Dockerfile .
+docker build -t go-front-sit:$releaseFS -f ./Dockerfile .
 cd /home/ec2-user/
+
+
+curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message=SIT Build Code ${releaseFS} OK" https://notify-api.line.me/api/notify
