@@ -15,4 +15,4 @@ docker run -p 3000:3000 -d charat/go-back-prod:latest
 
 #get version form api to notify
 latestVer=`curl http://52.54.69.220:3000/api/v1/env |cut -d '"' -f 52`
-curl -X POST -H "Authorization: Bearer ${tokenLineAB}" -F "message=PROD deploy latest Version: ${lastesVer} OK" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineAB}" -F "message=PROD deploy latest Version: ${latestVer} OK" https://notify-api.line.me/api/notify

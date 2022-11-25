@@ -14,4 +14,4 @@ docker run -p 3000:3000 -d charat/go-back-sit:latest
 
 #get version form api to notify
 latestVer=`curl http://44.212.248.132:3000/api/v1/env |cut -d '"' -f 52`
-curl -X POST -H "Authorization: Bearer ${tokenLineAB}" -F "message=SIT deploy latest Version: ${lastesVer} OK" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineAB}" -F "message=SIT deploy latest Version: ${latestVer} OK" https://notify-api.line.me/api/notify
