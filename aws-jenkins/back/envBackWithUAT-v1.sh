@@ -1,8 +1,10 @@
 #!/bin/bash
-cd /var/lib/jenkins/workspace/go-back-uat/src/environments/
-rm -rf environment.ts
-cp environment.uat.ts environment.ts
-cd /home/ec2-user
+#------
+# cd /var/lib/jenkins/workspace/go-back-uat/src/environments/
+# rm -rf environment.ts
+# cp environment.uat.ts environment.ts
+# cd /home/ec2-user
+#------
 
 tagnameBU=`cat /var/lib/jenkins/workspace/go-back-uat/package.json |grep "version" |cut -d '"' -f 4`
 releaseBU=`echo $tagnameBU |cut -d ' ' -f 1`
