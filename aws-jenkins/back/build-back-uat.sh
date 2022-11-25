@@ -11,3 +11,5 @@ cat /var/lib/jenkins/workspace/go-back-uat/docker-compose.yml
 cd  /var/lib/jenkins/workspace/go-back-uat/
 docker-compose build prod
 cd /home/ec2-user/
+
+curl -X POST -H "Authorization: Bearer ${tokenLineB}" -F "message=UAT Build Code ${releaseBU} OK" https://notify-api.line.me/api/notify

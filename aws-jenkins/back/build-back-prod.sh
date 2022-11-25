@@ -12,3 +12,5 @@ cat /var/lib/jenkins/workspace/go-back-prod/docker-compose.yml
 cd  /var/lib/jenkins/workspace/go-back-prod/
 docker-compose build prod
 cd /home/ec2-user/
+
+curl -X POST -H "Authorization: Bearer ${tokenLineB}" -F "message=PROD Build Code ${releaseBP} OK" https://notify-api.line.me/api/notify
