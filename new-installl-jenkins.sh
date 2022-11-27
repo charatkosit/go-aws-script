@@ -31,7 +31,17 @@ export tokenLineAB=ImU3zoEwmB44IwAtpeoqPZihzoLld0xUVeSiy1tD1tz
 EOF
 
 #jenkins
-
+yum update -y
+wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+yum upgrade
+amazon-linux-extras install java-openjdk11 -y
+yum install jenkins -y
+systemctl enable jenkins
+systemctl start jenkins
 
 #portainer
 
+mkdir /opt/portainer_data
+docker pull portainer/portainer
+docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /opt/portainer_data:/data portainer/portainer
