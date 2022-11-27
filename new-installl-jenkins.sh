@@ -12,6 +12,7 @@ service docker start
 systemctl enable --now docker
 systemctl is-enabled docker
 docker images
+chmod 777 /var/run/docker.sock
 
 #install docker compose
 curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
@@ -20,9 +21,9 @@ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 docker-compose version
 
 #env
-#AWS-Front:
+#Jenkins-Front:
 tokenLineF=K35RgggwSNxmv2UGVT5mGmO5wAwCAuFQuNodqLh5gCG
-#AWS-Back:
+#Jenkins-Back:
 tokenLineB=ImU3zoEwmB44IwAtpeoqPZihzoLld0xUVeSiy1tD1tz
 
 cat >> ~/.bashrc << EOF
@@ -39,6 +40,7 @@ amazon-linux-extras install java-openjdk11 -y
 yum install jenkins -y
 systemctl enable jenkins
 systemctl start jenkins
+jenkinsPass=`cat /var/lib/jenkins/secrets/initialAdminPassword`
 
 #portainer
 mkdir /opt/portainer_data
@@ -56,8 +58,10 @@ cp /home/ec2-user/temp/aws-jenkins/front/*.* /home/ec2-user/script/front
 cp /home/ec2-user/temp/aws-jenkins/back/*.* /home/ec2-user/script/back
 chmod +x /home/ec2-user/script/front/*.*
 chmod +x /home/ec2-user/script/back/*.*
+chmod +x /home/ec2-user/update-aws-jenkins.sh
 
 rm -rf temp
+rm -rf new-installl-jenkins.sh
 
-curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message= Front ok" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message= pass jenkins ${jenkinsPass} ok" https://notify-api.line.me/api/notify
 curl -X POST -H "Authorization: Bearer ${tokenLineB}" -F "message= Back ok" https://notify-api.line.me/api/notify
