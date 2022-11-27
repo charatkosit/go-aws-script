@@ -21,13 +21,13 @@ docker-compose version
 
 #env
 #AWS-Front:
-tokenLineAF=K35RgggwSNxmv2UGVT5mGmO5wAwCAuFQuNodqLh5gCG
+tokenLineF=K35RgggwSNxmv2UGVT5mGmO5wAwCAuFQuNodqLh5gCG
 #AWS-Back:
-tokenLineAB=ImU3zoEwmB44IwAtpeoqPZihzoLld0xUVeSiy1tD1tz
+tokenLineB=ImU3zoEwmB44IwAtpeoqPZihzoLld0xUVeSiy1tD1tz
 
 cat >> ~/.bashrc << EOF
-export tokenLineAF=K35RgggwSNxmv2UGVT5mGmO5wAwCAuFQuNodqLh5gCG
-export tokenLineAB=ImU3zoEwmB44IwAtpeoqPZihzoLld0xUVeSiy1tD1tz
+export tokenLineF=K35RgggwSNxmv2UGVT5mGmO5wAwCAuFQuNodqLh5gCG
+export tokenLineB=ImU3zoEwmB44IwAtpeoqPZihzoLld0xUVeSiy1tD1tz
 EOF
 
 #jenkins
@@ -41,7 +41,23 @@ systemctl enable jenkins
 systemctl start jenkins
 
 #portainer
-
 mkdir /opt/portainer_data
 docker pull portainer/portainer
 docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /opt/portainer_data:/data portainer/portainer
+
+#copy
+cp /home/ec2-user/temp/update-aws-jenkins.sh /home/ec2-user
+
+mkdir /home/ec2-user/script
+mkdir /home/ec2-user/script/front
+mkdir /home/ec2-user/script/back
+
+cp /home/ec2-user/temp/aws-jenkins/front/*.* /home/ec2-user/script/front
+cp /home/ec2-user/temp/aws-jenkins/back/*.* /home/ec2-user/script/back
+chmod +x /home/ec2-user/script/front/*.*
+chmod +x /home/ec2-user/script/back/*.*
+
+rm -rf temp
+
+curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message= Front ok" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineB}" -F "message= Back ok" https://notify-api.line.me/api/notify
