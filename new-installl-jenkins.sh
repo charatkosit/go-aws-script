@@ -22,13 +22,13 @@ docker-compose version
 
 #env
 #Jenkins-Front:
-tokenLineF=K35RgggwSNxmv2UGVT5mGmO5wAwCAuFQuNodqLh5gCG
+tokenLineJF=K35RgggwSNxmv2UGVT5mGmO5wAwCAuFQuNodqLh5gCG
 #Jenkins-Back:
-tokenLineB=ImU3zoEwmB44IwAtpeoqPZihzoLld0xUVeSiy1tD1tz
+tokenLineJB=ImU3zoEwmB44IwAtpeoqPZihzoLld0xUVeSiy1tD1tz
 
 cat >> ~/.bashrc << EOF
-export tokenLineF=K35RgggwSNxmv2UGVT5mGmO5wAwCAuFQuNodqLh5gCG
-export tokenLineB=ImU3zoEwmB44IwAtpeoqPZihzoLld0xUVeSiy1tD1tz
+export tokenLineJF=K35RgggwSNxmv2UGVT5mGmO5wAwCAuFQuNodqLh5gCG
+export tokenLineJB=ImU3zoEwmB44IwAtpeoqPZihzoLld0xUVeSiy1tD1tz
 EOF
 
 #jenkins
@@ -63,5 +63,5 @@ chmod +x /home/ec2-user/update-aws-jenkins.sh
 rm -rf temp
 rm -rf new-installl-jenkins.sh
 
-curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message= pass jenkins ${jenkinsPass} ok" https://notify-api.line.me/api/notify
-curl -X POST -H "Authorization: Bearer ${tokenLineB}" -F "message= Back ok" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineJF}" -F "message= pass jenkins ${jenkinsPass} ok" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineJB}" -F "message= Back ok" https://notify-api.line.me/api/notify
