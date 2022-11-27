@@ -24,7 +24,7 @@ docker-compose version
 #Jenkins-Front:
 tokenLineF=KU7zIs892MzQrur12rZSsEQCxGyDtHFEWDQiyir87zv
 #Jenkins-Back:
-tokenLineB=ImU3zoEwmB44IwAtpeoqPZihzoLld0xUVeSiy1tD1tz
+tokenLineB=jK01GQRfcbCkrExb8euztYLqB1WpDgMhIIR1pah5OCH
 
 cat >> ~/.bashrc << EOF
 export tokenLineF=KU7zIs892MzQrur12rZSsEQCxGyDtHFEWDQiyir87zv
