@@ -61,7 +61,7 @@ chmod +x /home/ec2-user/script/back/*.*
 chmod +x /home/ec2-user/update-aws-jenkins.sh
 
 rm -rf temp
-rm -rf new-installl-jenkins.sh
+rm -rf new-install-jenkins.sh
 
 curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message= pass jenkins ${jenkinsPass} ok" https://notify-api.line.me/api/notify
 curl -X POST -H "Authorization: Bearer ${tokenLineB}" -F "message= Back ok" https://notify-api.line.me/api/notify
