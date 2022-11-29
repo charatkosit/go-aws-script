@@ -64,3 +64,6 @@ rm -rf new-install-jenkins.sh
 
 curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message= pass jenkins ${jenkinsPass} ok" https://notify-api.line.me/api/notify
 curl -X POST -H "Authorization: Bearer ${tokenLineB}" -F "message= Back ok" https://notify-api.line.me/api/notify
+
+sudo bash
+chmod 775 .
