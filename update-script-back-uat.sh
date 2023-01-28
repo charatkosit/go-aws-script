@@ -1,4 +1,7 @@
 !#/bin/bash
+# use for update  
+# docker-compose.yml
+# and  deploy-back-uat.sh
 git clone https://github.com/charatkosit/go-aws-script.git temp 
 
 #stop docker-mysql-pma
@@ -18,20 +21,20 @@ export tokenLineAB=ImU3zoEwmB44IwAtpeoqPZihzoLld0xUVeSiy1tD1tz
 EOF
 
 #backup /data
-cp -R /home/ec2-user/docker-mysql-pma/data /home/ec2-user/data_backup
+#cp -R /home/ec2-user/docker-mysql-pma/data /home/ec2-user/data_backup
 
 #remove 
-rm -rf docker-mysql-pma
+rm -rf /home/ec2-user/docker-mysql-pma/docker-compose.yml
 rm -rf script
 
 #make dir
 mkdir script
-mkdir docker-mysql-pma
-mkdir docker-mysql-pma/data
+#mkdir docker-mysql-pma
+#mkdir docker-mysql-pma/data
 
 #restore /data to /docker-mysql-pwa
-cp -R /home/ec2-user/data_backup /home/ec2-user/docker-mysql-pma/data
-rm -rf /home/ec2-user/data_backup
+#cp -R /home/ec2-user/data_backup /home/ec2-user/docker-mysql-pma/data
+#rm -rf /home/ec2-user/data_backup
 
 #copy new
 cp /home/ec2-user/temp/aws-back-uat/script/*.* /home/ec2-user/script/

@@ -22,9 +22,13 @@ docker-compose version
 
 #env
 #Jenkins-Front:
-tokenLineF=KU7zIs892MzQrur12rZSsEQCxGyDtHFEWDQiyir87zv
+# tokenLineF=KU7zIs892MzQrur12rZSsEQCxGyDtHFEWDQiyir87zv
+# new token add to Jenkins-Front-Deploy 19/12/65
+tokenLinkF=UkdkuBI1jgYBARUR6his0S4B3OjmN89t1KuvdUNxj5S
 #Jenkins-Back:
-tokenLineB=jK01GQRfcbCkrExb8euztYLqB1WpDgMhIIR1pah5OCH
+# tokenLineB=jK01GQRfcbCkrExb8euztYLqB1WpDgMhIIR1pah5OCH
+# new token add to Jenkins-Back-Deploy 19/12/65
+tokenLinkF=iS17GPyH2nREJzOvnqmzVM5rsLGRPnGiBwiuvTNSv6b
 
 cat >> ~/.bashrc << EOF
 export tokenLineF=KU7zIs892MzQrur12rZSsEQCxGyDtHFEWDQiyir87zv
