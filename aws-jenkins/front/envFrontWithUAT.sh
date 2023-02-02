@@ -5,8 +5,8 @@ releaseFU=`echo $tagname |cut -d ' ' -f 1`
 
 backendUrl='http://172.41.62.164:3200/'
 authUrl='http://172.41.60.18:3000'
-sapUrl=''
-sapApiToken=''
+sapUrl='http://192.168.20.17:8880/apigoplus/EnqPartlist/'
+sapApiToken='z@hz3sNY#0ohB9SspeE9@fLDQ%r65x$k8LxL28VH72FfvRWgCn'
 stage='UAT' 
 timestamp=$(date)
 
