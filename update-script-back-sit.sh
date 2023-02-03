@@ -29,12 +29,12 @@ rm -rf script
 
 #make dir
 mkdir script
-#mkdir docker-mysql-pma
-#mkdir docker-mysql-pma/data
+mkdir docker-mysql-pma
+mkdir docker-mysql-pma/mysql-data
 
-#restore /data to /docker-mysql-pwa
-#cp -R /home/ec2-user/data_backup /home/ec2-user/docker-mysql-pma/data
-#rm -rf /home/ec2-user/data_backup
+#restore /mysql-data to /docker-mysql-pwa
+cp -R /home/ec2-user/data_backup /home/ec2-user/docker-mysql-pma/mysql-data
+rm -rf /home/ec2-user/data_backup
 
 #copy new
 cp /home/ec2-user/temp/aws-back-sit/script/*.* /home/ec2-user/script/
