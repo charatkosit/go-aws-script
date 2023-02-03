@@ -10,12 +10,12 @@ docker images
 
 #pull and run
 docker pull charat/go-back-prod:latest
-docker run -p 3200:3200 -d charat/go-back-prod:latest
+docker run -p 3000:3000 -d charat/go-back-prod:latest
 
 #wait 5 sec
 sleep 5 &
 wait
 
 #get version form api to notify
-latestVer=`curl http://52.54.69.220:3200/api/v1/env |cut -d '"' -f 52`
+latestVer=`curl http://172.41.60.173:3000/api/v1/env |cut -d '"' -f 52`
 curl -X POST -H "Authorization: Bearer ${tokenLineAB}" -F "message=PROD deploy latest Version: ${latestVer} OK" https://notify-api.line.me/api/notify
