@@ -17,5 +17,5 @@ sleep 5 &
 wait
 
 #get version form api to notify
-latestVer=`curl http://44.212.248.132:3200/api/v1/env |cut -d '"' -f 52`
+latestVer=`curl http://13.212.68.75:3200/api/v1/env |cut -d '"' -f 52`
 curl -X POST -H "Authorization: Bearer ${tokenLineAB}" -F "message=SIT deploy latest Version: ${latestVer} OK" https://notify-api.line.me/api/notify
