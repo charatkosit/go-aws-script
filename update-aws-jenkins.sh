@@ -1,6 +1,7 @@
 #!/bin/bash
 git clone https://github.com/charatkosit/go-aws-script.git temp
 
+chmod 666 /var/run/docker.sock
 #remove
 rm -rf script
 
