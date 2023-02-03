@@ -9,7 +9,7 @@
 tagnameBP=`cat /var/lib/jenkins/workspace/go-auth-prod/package.json |grep "version" |cut -d '"' -f 4`
 releaseBP=`echo $tagnameBP |cut -d ' ' -f 1`
 
-sed -i -e "s|127.0.0.1|52.54.69.220|g" /var/lib/jenkins/workspace/go-auth-prod/src/environments/environment.ts
+sed -i -e "s|127.0.0.1|172.41.60.173|g" /var/lib/jenkins/workspace/go-auth-prod/src/environments/environment.ts
 sed -i -e "s|%release%|${releaseBP}|g" /var/lib/jenkins/workspace/go-auth-prod/src/environments/environment.ts
 #debug
 cat /var/lib/jenkins/workspace/go-auth-prod/src/environments/environment.ts
