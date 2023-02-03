@@ -10,7 +10,7 @@ tagnameBU=`cat /var/lib/jenkins/workspace/go-back-uat/package.json |grep "versio
 releaseBU=`echo $tagnameBU |cut -d ' ' -f 1`
 
 #172.41.62.164  is localhost
-sed -i -e "s|127.0.0.1|172.41.62.164|g" /var/lib/jenkins/workspace/go-back-uat/src/environments/environment.ts
+sed -i -e "s|127.0.0.1|127.0.0.1|g" /var/lib/jenkins/workspace/go-back-uat/src/environments/environment.ts
 sed -i -e "s|%release%|${releaseBU}|g" /var/lib/jenkins/workspace/go-back-uat/src/environments/environment.ts
 #debug
 cat /var/lib/jenkins/workspace/go-back-uat/src/environments/environment.ts
