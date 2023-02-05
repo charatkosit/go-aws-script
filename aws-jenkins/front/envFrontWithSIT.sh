@@ -3,8 +3,8 @@
 tagname=`cat /var/lib/jenkins/workspace/go-front-sit/package.json |grep "version" |cut -d '"' -f 4`
 releaseFS=`echo $tagname |cut -d ' ' -f 1`
 
-backendUrl='http://13.229.143.20:3000/'
-authUrl='http://172.41.60.18:3000'
+backendUrl='http://172.41.62.59:3000/'
+authUrl='http://172.41.60.18:3000/'
 sapUrl='http://192.168.20.17:8880/apigoplus/EnqPartlist/'
 sapApiToken='z@hz3sNY#0ohB9SspeE9@fLDQ%r65x$k8LxL28VH72FfvRWgCn'
 stage='SIT' 
