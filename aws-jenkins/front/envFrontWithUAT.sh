@@ -18,8 +18,10 @@ sed -i -e "s|%sapApiToken%|${sapApiToken}|g" /var/lib/jenkins/workspace/go-front
 sed -i -e "s|%stage%|${stage}|g" /var/lib/jenkins/workspace/go-front-uat/src/environments/environment.prod.ts
 sed -i -e "s|%timestamp%|${timestamp}|g" /var/lib/jenkins/workspace/go-front-uat/src/environments/environment.prod.ts
 sed -i -e "s|%release%|${releaseFU}|g" /var/lib/jenkins/workspace/go-front-uat/src/environments/environment.prod.ts
-#replace data proxy in nginx
-sed -i -e "s|172.41.62.59:3000|172.41.62.164:3000|g" /var/lib/jenkins/workspace/go-front-uat/nginx.conf
+#replace data proxy in nginx  ,change ip to backend api server 
+#Go.Back.All.UAT = 172.41.62.59
+#Go.Back.UAT     = 172.41.62.164
+sed -i -e "s|172.41.62.59:3000|172.41.62.59:3000|g" /var/lib/jenkins/workspace/go-front-uat/nginx.conf
 #debug
 cat /var/lib/jenkins/workspace/go-front-uat/src/environments/environment.prod.ts
 
