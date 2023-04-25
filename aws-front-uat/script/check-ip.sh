@@ -26,14 +26,14 @@ while true; do
             if [ "${STATUS[$ip]}" != "up" ]; then
                 STATUS["$ip"]="up"
                 # Send a Line Notify message to the group
-                curl -X POST -H "Authorization: Bearer ${tokenLineAF}" -F "message=$ip is up" -F "notification_disabled=true" "https://notify-api.line.me/api/notify" > /dev/null
+                curl -X POST -H "Authorization: Bearer ${tokenLineAF}" -F "message=$ip is up at $(date +'%Y-%m-%d %H:%M:%S')" -F "notification_disabled=true" "https://notify-api.line.me/api/notify" > /dev/null
             fi
         else
             # If ping timed out, update the status to "down" and send a notification if necessary
             if [ "${STATUS[$ip]}" != "down" ]; then
                 STATUS["$ip"]="down"
-                # Send a Line Notify message to the group
-                curl -X POST -H "Authorization: Bearer ${tokenLineAF}" -F "message=$ip is down" -F "notification_disabled=true" "https://notify-api.line.me/api/notify" > /dev/null
+                # Send a Line Notify message to the group 
+                curl -X POST -H "Authorization: Bearer ${tokenLineAF}" -F "message=$ip is down at $(date +'%Y-%m-%d %H:%M:%S')" -F "notification_disabled=true" "https://notify-api.line.me/api/notify" > /dev/null
             fi
         fi
     done
