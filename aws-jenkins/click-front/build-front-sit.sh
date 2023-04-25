@@ -1,11 +1,11 @@
 #!/bin/bash
 echo "get version from package.json and to build docker"
-tagname=`cat /var/lib/jenkins/workspace/go-front-sit/package.json |grep "version" |cut -d'"' -f 4`
+tagname=`cat /var/lib/jenkins/workspace/click-front-sit/package.json |grep "version" |cut -d'"' -f 4`
 releaseFS=`echo $tagname |cut -d ' ' -f 1`
 echo $releaseFS
 
-cd /var/lib/jenkins/workspace/go-front-sit/
-docker build -t go-front-sit:$releaseFS -f ./Dockerfile .
+cd /var/lib/jenkins/workspace/click-front-sit/
+docker build -t click-front-sit:$releaseFS -f ./Dockerfile .
 cd /home/ec2-user/
 
 
