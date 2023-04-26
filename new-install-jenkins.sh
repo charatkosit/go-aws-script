@@ -29,10 +29,13 @@ tokenLinkF=UkdkuBI1jgYBARUR6his0S4B3OjmN89t1KuvdUNxj5S
 # tokenLineB=jK01GQRfcbCkrExb8euztYLqB1WpDgMhIIR1pah5OCH
 # new token add to Jenkins-Back-Deploy 19/12/65
 tokenLinkF=iS17GPyH2nREJzOvnqmzVM5rsLGRPnGiBwiuvTNSv6b
+#
+export tokenLineDeployGroup=nS2OKcPZ9lXNb03JHJ7xzl4YNDBdzswkTg1qK8iNDQD
 
 cat >> ~/.bashrc << EOF
 export tokenLineF=KU7zIs892MzQrur12rZSsEQCxGyDtHFEWDQiyir87zv
 export tokenLineB=jK01GQRfcbCkrExb8euztYLqB1WpDgMhIIR1pah5OCH
+export tokenLineDeployGroup=nS2OKcPZ9lXNb03JHJ7xzl4YNDBdzswkTg1qK8iNDQD
 EOF
 
 #jenkins

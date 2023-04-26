@@ -18,4 +18,4 @@ wait
 
 #get version form api to notify
 latestVer=`curl http://172.31.24.223:3000/api/v1/env |cut -d '"' -f 52`
-curl -X POST -H "Authorization: Bearer ${tokenLineAB}" -F "message=SIT deploy latest Version: ${latestVer} OK" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineDeployGroup}" -F "message=Click-Back-SIT deploy latest Version: ${latestVer} OK" https://notify-api.line.me/api/notify
