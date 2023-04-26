@@ -23,5 +23,5 @@ sed -i -e "s|172.41.62.59:3000|172.41.62.164:3000|g" /var/lib/jenkins/workspace/
 #debug
 cat /var/lib/jenkins/workspace/go-front-prod/src/environments/environment.prod.ts
 
-curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message=UAT prepare Code ${releaseFP} OK" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineJenkinClick}" -F "message=Click-Front-UAT prepare Code ${releaseFP} OK" https://notify-api.line.me/api/notify
 

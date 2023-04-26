@@ -15,4 +15,4 @@ sed -i -e "s|%release%|${releaseBS}|g" /var/lib/jenkins/workspace/click-back-sit
 #debug
 cat /var/lib/jenkins/workspace/click-back-sit/src/environments/environment.ts
 
-curl -X POST -H "Authorization: Bearer ${tokenLineB}" -F "message=Click-Back-SIT prepare Code ${releaseBS} OK" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineJenkinClick}" -F "message=Click-Back-SIT prepare Code ${releaseBS} OK" https://notify-api.line.me/api/notify

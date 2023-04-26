@@ -11,4 +11,4 @@ docker rmi $(docker images click-back-sit --format "{{.ID}}") -f
 #docker rmi -f $(docker images --format "{{.ID}}" --filter "dangling=true")
 docker images
 
-curl -X POST -H "Authorization: Bearer ${tokenLineB}" -F "message=Click-Back-SIT push DockerHub ${releasePBS} OK" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineJenkinClick}" -F "message=Click-Back-SIT push DockerHub ${releasePBS} OK" https://notify-api.line.me/api/notify

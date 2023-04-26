@@ -9,4 +9,4 @@ docker build -t click-front-sit:$releaseFS -f ./Dockerfile .
 cd /home/ec2-user/
 
 
-curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message=SIT Build Code ${releaseFS} OK" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineJenkinClick}" -F "message=Click-Front-SIT Build Code ${releaseFS} OK" https://notify-api.line.me/api/notify

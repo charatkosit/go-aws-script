@@ -12,4 +12,4 @@ cd  /var/lib/jenkins/workspace/click-back-sit/
 docker-compose build prod
 cd /home/ec2-user/
 
-curl -X POST -H "Authorization: Bearer ${tokenLineB}" -F "message=Click-Back-SIT Build Code ${releaseBS} OK" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineJenkinClick}" -F "message=Click-Back-SIT Build Code ${releaseBS} OK" https://notify-api.line.me/api/notify

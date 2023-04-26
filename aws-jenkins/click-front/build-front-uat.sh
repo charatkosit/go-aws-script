@@ -9,4 +9,4 @@ docker build -t go-front-uat:$releaseFU -f ./Dockerfile .
 cd /home/ec2-user/
 
 
-curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message=UAT Build Code ${releaseFU} OK" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineJenkinClick}" -F "message=Click-Front-UAT Build Code ${releaseFU} OK" https://notify-api.line.me/api/notify

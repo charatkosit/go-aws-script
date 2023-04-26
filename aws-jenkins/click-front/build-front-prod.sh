@@ -8,4 +8,4 @@ cd /var/lib/jenkins/workspace/go-front-prod/
 docker build -t go-front-prod:$releaseFP -f ./Dockerfile .
 cd /home/ec2-user/
 
-curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message=PROD Build Code ${releaseFP} OK" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineJenkinClick}" -F "message=Click-Front-PROD Build Code ${releaseFP} OK" https://notify-api.line.me/api/notify

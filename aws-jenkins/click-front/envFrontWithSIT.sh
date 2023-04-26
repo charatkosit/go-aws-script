@@ -16,4 +16,4 @@ sed -i -e "s|%release%|${releaseFS}|g" /var/lib/jenkins/workspace/click-front-si
 #debug
 cat /var/lib/jenkins/workspace/click-front-sit/src/environments/environment.prod.ts
 
-curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message=SIT prepare Code ${releaseFS} OK" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineJenkinClick}" -F "message=Click-Front-SIT prepare Code ${releaseFS} OK" https://notify-api.line.me/api/notify
