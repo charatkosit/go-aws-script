@@ -49,9 +49,9 @@ systemctl start jenkins
 jenkinsPass=`cat /var/lib/jenkins/secrets/initialAdminPassword`
 
 #portainer
-mkdir /opt/portainer_data
-docker pull portainer/portainer
-docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /opt/portainer_data:/data portainer/portainer
+# mkdir /opt/portainer_data
+# docker pull portainer/portainer
+# docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /opt/portainer_data:/data portainer/portainer
 
 #copy
 cp /home/ec2-user/temp/update-aws-jenkins.sh /home/ec2-user
