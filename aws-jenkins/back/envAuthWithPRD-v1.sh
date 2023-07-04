@@ -9,7 +9,7 @@
 tagnameBP=`cat /var/lib/jenkins/workspace/go-back-prod/package.json |grep "version" |cut -d '"' -f 4`
 releaseBP=`echo $tagnameBP |cut -d ' ' -f 1`
 
-sed -i -e "s|127.0.0.1|172.41.60.78|g" /var/lib/jenkins/workspace/go-back-prod/src/environments/environment.ts
+sed -i -e "s|127.0.0.1|172.51.67.165|g" /var/lib/jenkins/workspace/go-back-prod/src/environments/environment.ts
 sed -i -e "s|%release%|${releaseBP}|g" /var/lib/jenkins/workspace/go-back-prod/src/environments/environment.ts
 #debug
 cat /var/lib/jenkins/workspace/go-back-prod/src/environments/environment.ts
