@@ -4,7 +4,7 @@ tagnameBP=`cat /var/lib/jenkins/workspace/go-back-auth-prod/package.json |grep "
 releaseBP=`echo $tagnameBP |cut -d ' ' -f 1`
 echo $releaseBP
 
-sed -i -e "s/go-auth-xxx/go-auth-prod/g" /var/lib/jenkins/workspace/go-back-auth-prod/docker-compose.yml
+sed -i -e "s/go-auth-xxx/go-back-auth-prod/g" /var/lib/jenkins/workspace/go-back-auth-prod/docker-compose.yml
 sed -i -e "s/latest/${releaseBP}/g" /var/lib/jenkins/workspace/go-back-auth-prod/docker-compose.yml
 
 cat /var/lib/jenkins/workspace/go-back-auth-prod/docker-compose.yml
