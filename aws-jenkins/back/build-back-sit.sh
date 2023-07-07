@@ -4,6 +4,7 @@ tagnameBS=`cat /var/lib/jenkins/workspace/go-back-sit/package.json |grep "versio
 releaseBS=`echo $tagnameBS |cut -d ' ' -f 1`
 echo $releaseBS
 
+sed -i -e "s/go-back-yyy/go-back-sit/g" /var/lib/jenkins/workspace/go-back-sit/docker-compose.yml
 sed -i -e "s/go-back-xxx/go-back-sit/g" /var/lib/jenkins/workspace/go-back-sit/docker-compose.yml
 sed -i -e "s/latest/${releaseBS}/g" /var/lib/jenkins/workspace/go-back-sit/docker-compose.yml
 cat /var/lib/jenkins/workspace/go-back-sit/docker-compose.yml
