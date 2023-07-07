@@ -17,5 +17,5 @@ sleep 5 &
 wait
 
 #get version form api to notify
-latestVer=`curl http://172.41.60.173:3000/api/v1/env |cut -d '"' -f 52`
+latestVer=`curl http://172.51.66.4:3000/api/v1/env |cut -d '"' -f 52`
 curl -X POST -H "Authorization: Bearer ${tokenLineAB}" -F "message=UAT deploy latest Version: ${latestVer} OK" https://notify-api.line.me/api/notify
