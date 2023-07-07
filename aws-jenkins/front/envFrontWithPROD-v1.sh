@@ -19,12 +19,12 @@ sed -i -e "s|%stage%|${stage}|g" /var/lib/jenkins/workspace/go-front-prod/src/en
 sed -i -e "s|%timestamp%|${timestamp}|g" /var/lib/jenkins/workspace/go-front-prod/src/environments/environment.prod.ts
 sed -i -e "s|%release%|${releaseFS}|g" /var/lib/jenkins/workspace/go-front-prod/src/environments/environment.prod.ts
 
-#no need change filename nginx.conf
+# no need change filename nginx.conf
 # old_filename="nginx.conf.prod"
 # new_filename="nginx.conf"
-# mv "$old_filename" "$new_filename"
+# mv "$old_filename" "$new_filename" 
 
 #debug
 cat /var/lib/jenkins/workspace/go-front-prod/src/environments/environment.prod.ts
 
-curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message=prod prepare Code ${releaseFS} OK" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message=PROD prepare Code ${releaseFS} OK" https://notify-api.line.me/api/notify
