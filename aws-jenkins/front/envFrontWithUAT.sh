@@ -19,6 +19,12 @@ sed -i -e "s|%stage%|${stage}|g" /var/lib/jenkins/workspace/go-front-uat/src/env
 sed -i -e "s|%timestamp%|${timestamp}|g" /var/lib/jenkins/workspace/go-front-uat/src/environments/environment.prod.ts
 sed -i -e "s|%release%|${releaseFS}|g" /var/lib/jenkins/workspace/go-front-uat/src/environments/environment.prod.ts
 
+#change filename nginx.conf
+old_filename="nginx.conf.uat"
+new_filename="nginx.conf"
+mv "$old_filename" "$new_filename" 
+
+
 #debug
 cat /var/lib/jenkins/workspace/go-front-uat/src/environments/environment.prod.ts
 
