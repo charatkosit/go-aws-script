@@ -6,7 +6,7 @@
 tagname=`cat /var/lib/jenkins/workspace/go-front-prod/package.json |grep "version" |cut -d '"' -f 4`
 releaseFS=`echo $tagname |cut -d ' ' -f 1`
 
-backendUrl='http://172.51.66.196:3000/'
+backendUrl='http://172.51.64.46:3000/'
 authUrl='http://172.41.60.18:3000/'
 stage='PROD' 
 timestamp=$(date)
