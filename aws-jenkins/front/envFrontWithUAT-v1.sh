@@ -1,5 +1,9 @@
 #!/bin/bash
 #prepare  data
+#
+# Env for Go-Back-UAT
+# ver 0.0.1 15/7/66 21:50
+
 tagname=`cat /var/lib/jenkins/workspace/go-front-uat/package.json |grep "version" |cut -d '"' -f 4`
 releaseFS=`echo $tagname |cut -d ' ' -f 1`
 
