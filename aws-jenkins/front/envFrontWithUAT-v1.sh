@@ -2,7 +2,7 @@
 #prepare  data
 #
 # Env for Go-Back-UAT
-# ver 0.0.1 15/7/66 21:50
+# ver 0.0.2 15/7/66 21:55
 
 tagname=`cat /var/lib/jenkins/workspace/go-front-uat/package.json |grep "version" |cut -d '"' -f 4`
 releaseFS=`echo $tagname |cut -d ' ' -f 1`
@@ -27,6 +27,10 @@ sed -i -e "s|%release%|${releaseFS}|g" /var/lib/jenkins/workspace/go-front-uat/s
 old_filename="nginx.conf.uat"
 new_filename="nginx.conf"
 mv "$old_filename" "$new_filename" 
+
+#show nginx.conf
+cat nginx.conf
+
 
 #debug
 cat /var/lib/jenkins/workspace/go-front-uat/src/environments/environment.prod.ts
