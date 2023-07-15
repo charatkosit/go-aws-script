@@ -24,6 +24,9 @@ old_filename="nginx.conf.sit"
 new_filename="nginx.conf"
 mv "$old_filename" "$new_filename" 
 
+#show nginx.conf
+cat nginx.conf
+
 #debug
 cat /var/lib/jenkins/workspace/go-front-sit/src/environments/environment.prod.ts
 

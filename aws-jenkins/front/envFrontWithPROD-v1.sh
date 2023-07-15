@@ -24,6 +24,9 @@ sed -i -e "s|%release%|${releaseFS}|g" /var/lib/jenkins/workspace/go-front-prod/
 # new_filename="nginx.conf"
 # mv "$old_filename" "$new_filename" 
 
+#show nginx.conf
+cat nginx.conf
+
 #debug
 cat /var/lib/jenkins/workspace/go-front-prod/src/environments/environment.prod.ts
 
