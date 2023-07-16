@@ -2,12 +2,12 @@
 #prepare  data
 #
 # Env for Go-Back-PROD
-# ver 0.0.2 15/7/66 22:19
+# ver 0.0.3 16/7/66 12:00
 tagname=`cat /var/lib/jenkins/workspace/go-front-prod/package.json |grep "version" |cut -d '"' -f 4`
 releaseFS=`echo $tagname |cut -d ' ' -f 1`
 
 backendUrl='http://172.51.64.46:3000/'
-authUrl='http://172.41.60.18:3000/'
+authUrl='http://172.51.67.165:3100/'
 stage='PROD' 
 timestamp=$(date)
 
