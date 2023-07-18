@@ -10,7 +10,7 @@ tagnameBU=`cat /var/lib/jenkins/workspace/go-auth-uat/package.json |grep "versio
 releaseBU=`echo $tagnameBU |cut -d ' ' -f 1`
 
 sed -i -e "s|127.0.0.1|172.51.64.139|g" /var/lib/jenkins/workspace/go-auth-uat/src/environments/environment.ts
-sed -i -e "s|%release%|${releaseBU}|g" /var/lib/jenkins/workspace/go-auth-uat/src/environments/environment.ts
+sed -i -e "s|Back-Auth-Dev|${releaseBU}|g" /var/lib/jenkins/workspace/go-auth-uat/src/environments/environment.ts
 #debug
 cat /var/lib/jenkins/workspace/go-auth-uat/src/environments/environment.ts
 
