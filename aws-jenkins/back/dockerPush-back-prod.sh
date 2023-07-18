@@ -1,13 +1,13 @@
 #!/bin/bash
-releasePBP=`docker images go-back-prod --format {{.Tag}} | head -1`
+releasePBP=`docker images go-auth-prod --format {{.Tag}} | head -1`
 
-docker image tag go-back-prod:$releasePBP go-back-prod:latest
-docker image tag go-back-prod:$releasePBP charat/go-back-prod:$releasePBP 
-docker image tag go-back-prod:latest charat/go-back-prod:latest
-docker image push --all-tags charat/go-back-prod
+docker image tag go-auth-prod:$releasePBP go-auth-prod:latest
+docker image tag go-auth-prod:$releasePBP charat/go-auth-prod:$releasePBP 
+docker image tag go-auth-prod:latest charat/go-auth-prod:latest
+docker image push --all-tags charat/go-auth-prod
 
 docker images
-docker rmi $(docker images go-back-prod --format "{{.ID}}") -f
+docker rmi $(docker images go-auth-prod --format "{{.ID}}") -f
 #docker rmi -f $(docker images --format "{{.ID}}" --filter "dangling=true")
 docker images
 
