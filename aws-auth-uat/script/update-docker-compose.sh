@@ -7,3 +7,4 @@ cp /home/ec2-user/temp/aws-auth-uat/docker-mysql-pma/*.yml /home/ec2-user/docker
 #remove temp
 cd /home/ec2-user/
 rm -rf temp
+cd /home/ec2-user/script/
