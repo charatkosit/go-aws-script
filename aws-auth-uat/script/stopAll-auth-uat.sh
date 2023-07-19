@@ -9,7 +9,14 @@ if docker ps -q >/dev/null 2>&1; then
     docker rm $(docker ps -aqf "status=exited")
 
     # ลบ images images go-auth-uat
-    docker rmi $(docker images go-auth-uat --format "{{.ID}}") -f
+ 
+    # ตรวจสอบว่ามี image ชื่อ charat/go-auth-uat หรือไม่
+    if docker image ls | grep -q charat/go-auth-uat; then
+         # ลบ image ชื่อ charat/go-auth-uat
+         docker rmi charat/go-auth-uat
+    else
+         echo "Image charat/go-auth-uat not found. Skipping..."
+    fi
 else
     # หากไม่มี container ทำงานอยู่
     echo "All containers are stopped"
