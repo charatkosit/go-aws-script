@@ -10,7 +10,7 @@ docker images
 
 #pull and run
 docker pull charat/go-auth-sit:latest
-docker run -p 3000:3000 -d charat/go-auth-sit:latest
+docker run -p 3100:3000 -d charat/go-auth-sit:latest
 
 #wait 5 sec
 sleep 5 &
