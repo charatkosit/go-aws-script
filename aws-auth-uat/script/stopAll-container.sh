@@ -4,6 +4,9 @@
 if docker ps -q >/dev/null 2>&1; then
     # หากมี container ทำงานอยู่ ให้หยุดทุกตัว
     docker stop $(docker ps -aq)
+    
+    # ลบ container ที่ไม่ทำงานแล้วทั้งหมด
+    docker rm $(docker ps -aqf "status=exited")
 else
     # หากไม่มี container ทำงานอยู่
     echo "All containers are stopped"
