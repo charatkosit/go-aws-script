@@ -2,6 +2,9 @@
 #stop container before
 docker stop $(docker ps --filter 'ancestor=charat/go-back-sit:latest' --format "{{.ID}}")
 
+#ลบ container ที่ไม่ทำงานแล้ว
+docker rm $(docker ps -aqf "status=exited")
+
 #remove image <none> and  go-back
 docker images
 docker rmi $(docker images go-back-sit --format "{{.ID}}") -f
