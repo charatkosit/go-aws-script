@@ -18,10 +18,15 @@ EOF
 
 #copy new
 mkdir script
+mkdir Initial
+
 cp /home/ec2-user/temp/aws-auth-uat/script/*.* /home/ec2-user/script/
+cp /home/ec2-user/temp/aws-auth-uat/Initial/*.* /home/ec2-user/Initial/
 
 #chmod
 chmod +x /home/ec2-user/script/*.*
+chmod +x /home/ec2-user/Initial/*.*
+
 
 #remove temp
 rm -rf temp

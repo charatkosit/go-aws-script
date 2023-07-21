@@ -29,6 +29,7 @@ rm -rf script
 
 #make dir
 mkdir script
+mkdir Initial
 mkdir docker-mysql-pma
 mkdir docker-mysql-pma/mysql-data
 
@@ -38,9 +39,11 @@ rm -rf /home/ec2-user/data_backup
 
 #copy new
 cp /home/ec2-user/temp/aws-back-sit/script/*.* /home/ec2-user/script/
+cp /home/ec2-user/temp/aws-back-sit/Initial/*.* /home/ec2-user/Initial/
 cp /home/ec2-user/temp/aws-back-sit/docker-mysql-pma/*.* /home/ec2-user/docker-mysql-pma/
 #chmod
 chmod +x /home/ec2-user/script/*.*
+chmod +x /home/ec2-user/Initial/*.*
 chmod +x /home/ec2-user/docker-mysql-pma/*.*
 #remove temp
 rm -rf temp
