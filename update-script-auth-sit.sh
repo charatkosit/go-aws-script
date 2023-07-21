@@ -17,6 +17,7 @@ export tokenLineAB=ImU3zoEwmB44IwAtpeoqPZihzoLld0xUVeSiy1tD1tz
 EOF
 
 #copy new
+mkdir script
 cp /home/ec2-user/temp/aws-auth-sit/script/*.* /home/ec2-user/script/
 
 #chmod
