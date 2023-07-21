@@ -60,11 +60,14 @@ cp /home/ec2-user/temp/runfirst.sh /home/ec2-user
 mkdir /home/ec2-user/script
 mkdir /home/ec2-user/script/front
 mkdir /home/ec2-user/script/back
+mkdir /home/ec2-user/script/auth
 
 cp /home/ec2-user/temp/aws-jenkins/front/*.* /home/ec2-user/script/front
 cp /home/ec2-user/temp/aws-jenkins/back/*.* /home/ec2-user/script/back
+cp /home/ec2-user/temp/aws-jenkins/auth/*.* /home/ec2-user/script/auth
 chmod +x /home/ec2-user/script/front/*.*
 chmod +x /home/ec2-user/script/back/*.*
+chmod +x /home/ec2-user/script/auth/*.*
 chmod +x /home/ec2-user/update-aws-jenkins.sh
 chmod +x /home/ec2-user/runfirst.sh
 

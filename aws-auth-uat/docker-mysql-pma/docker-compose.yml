@@ -14,7 +14,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
-      - 8000:80
+      - 8080:80
     environment:
       PMA_PASSWORD: 1234
       PMA_USER: root
