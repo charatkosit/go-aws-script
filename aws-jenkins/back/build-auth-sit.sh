@@ -4,7 +4,7 @@ tagnameBS=`cat /var/lib/jenkins/workspace/Go-Auth-SIT/package.json |grep "versio
 releaseBS=`echo $tagnameBS |cut -d ' ' -f 1`
 echo $releaseBS
 
-sed -i -e "s/go-auth-xxx/Go-Auth-SIT/g" /var/lib/jenkins/workspace/Go-Auth-SIT/docker-compose.yml
+sed -i -e "s/go-auth-xxx/go-auth-sit/g" /var/lib/jenkins/workspace/Go-Auth-SIT/docker-compose.yml
 sed -i -e "s/latest/${releaseBS}/g" /var/lib/jenkins/workspace/Go-Auth-SIT/docker-compose.yml
 cat /var/lib/jenkins/workspace/Go-Auth-SIT/docker-compose.yml
 
