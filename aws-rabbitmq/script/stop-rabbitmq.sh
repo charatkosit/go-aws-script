@@ -2,7 +2,7 @@
 
 #สตาร์ท mysql
 cd /home/ec2-user/docker-rabbitmq
-docker-compose up -d
+docker-compose down
 cd /home/ec2-user/
 
 # #สตาร์ท go-auth-uat
