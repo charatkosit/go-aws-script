@@ -1,21 +1,19 @@
 #!/bin/bash
 
-rm -rf temp
-
-mkdir Initial
-mkdir script
-mkdir docker-compose
-
+rm -rf  /home/ec2-user/temp
 
 git clone https://github.com/charatkosit/go-aws-script.git temp
 
-cp /home/ec2-user/temp/update-script-rabbitmq.sh /home/ec2-user/
-cp /home/ec2-user/temp/aws-rabbitmq/script/*.* /home/ec2-user/script
-cp /home/ec2-user/temp/aws-rabbitmq/docker-compose/*.*  /home/ec2-user/docker-compose
+rm -rf /home/ec2-user/Initial
+rm -rf /home/ec2-user/script
 
-chmod +x /home/ec2-user/update-script-rabbitmq.sh
+mkdir Initial
+mkdir script
+
+cp /home/ec2-user/temp/aws-rabbitmq/Initial/*.* /home/ec2-user/Initial
+cp /home/ec2-user/temp/aws-rabbitmq/script/*.* /home/ec2-user/script
+
 chmod +x /home/ec2-user/Initial/*.*
 chmod +x /home/ec2-user/script/*.*
 
-rm -rf temp
-
+rm -rf  /home/ec2-user/temp
