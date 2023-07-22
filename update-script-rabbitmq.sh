@@ -2,6 +2,7 @@
 
 rm -rf  /home/ec2-user/temp
 
+cd /home/ec2-user
 git clone https://github.com/charatkosit/go-aws-script.git temp
 
 rm -rf /home/ec2-user/Initial
