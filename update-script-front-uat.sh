@@ -6,15 +6,16 @@ rm -rf script
 
 #make dir
 mkdir script
-mkdir Initial
+mkdir docker-compose
 
 #copy new
-cp /home/ec2-user/temp/aws-front-uat/script/*.* /home/ec2-user/script/
-cp /home/ec2-user/temp/aws-front-uat/Initial/*.* /home/ec2-user/Initial/
+cp /home/ec2-user/temp/aws-rabbitmq/script/*.* /home/ec2-user/script/
+cp /home/ec2-user/temp/aws-rabbitmq/*.* /home/ec2-user/docker-compose/
+
 
 #chmod
 chmod +x /home/ec2-user/script/*.*
-chmod +x /home/ec2-user/Initial/*.*
+
 
 #remove temp
 rm -rf temp
