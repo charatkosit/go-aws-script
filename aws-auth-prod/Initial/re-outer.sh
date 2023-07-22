@@ -7,7 +7,7 @@ git clone https://github.com/charatkosit/go-aws-script.git temp
 rm -rf /home/ec2-user/update-script-auth-prod.sh
 
 #copy
-cp /home/ec2-user/temp/update-script-auth-prod.sh  /home/ec2-user/script/
+cp /home/ec2-user/temp/update-script-auth-prod.sh  /home/ec2-user/
 
 #
 chmod +x /home/ec2-user/update-script-auth-prod.sh
