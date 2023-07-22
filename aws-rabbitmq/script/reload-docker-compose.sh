@@ -1,6 +1,8 @@
 #!/bin/bash
-
+rm -rf  /home/ec2-user/temp
 rm -rf /home/ec2-user/docker-rabbitmq
+
+git clone https://github.com/charatkosit/go-aws-script.git temp
 
 mkdir /home/ec2-user/docker-rabbitmq
 
