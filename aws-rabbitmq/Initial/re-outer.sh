@@ -1,5 +1,7 @@
 !#/bin/bash
 
+cd /home/ec2-user/
+
 git clone https://github.com/charatkosit/go-aws-script.git temp
 
 
