@@ -10,15 +10,14 @@ services:
 
 #### RabbitMQ Container ####
     rabbitmq:
-        image: rabbitmq:management-alpine
-        tty: true
+        image: rabbitmq:3-management
+        hostname: my-rabbit
+        volumes:
+            - ./rabbitmq/etc/definitions.json:/etc/rabbitmq/definitions.json
+            - ./rabbitmq/etc/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+            - ./rabbitmq/data:/var/lib/rabbitmq/mnesia/rabbit@my-rabbit
+            - ./rabbitmq/logs:/var/log/rabbitmq/log
         ports:
-            - "15672:15672"
-            - "5672:5672"
+            - 5672:5672
+            - 15672:15672
 
-#### Add more Containers below ####
-# use [ docker network create microservicenetwork ] เพื่อสร้าง mapmagiccloud(your network name) network ขึ้นมาก่อน
-networks:
-    default:
-        external:
-            name: microservicenetwork
