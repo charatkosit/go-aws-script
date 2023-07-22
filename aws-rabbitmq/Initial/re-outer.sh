@@ -14,3 +14,5 @@ chmod +x /home/ec2-user/update-script-rabbitmq.sh
 
 #clear temp
 rm -rf temp
+
+cd /home/ec2-user
