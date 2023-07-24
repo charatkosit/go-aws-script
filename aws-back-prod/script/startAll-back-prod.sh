@@ -7,7 +7,7 @@ cd /home/ec2-user/
 
 #สตาร์ท go-back-prod
 docker pull charat/go-back-prod:latest
-docker run -p 3100:3100 -d charat/go-back-prod:latest
+docker run -p 3000:3000 -d charat/go-back-prod:latest
 
 #wait 5 sec
 sleep 5 &
