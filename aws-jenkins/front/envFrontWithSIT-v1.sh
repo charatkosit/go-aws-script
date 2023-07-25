@@ -1,13 +1,14 @@
 #!/bin/bash
 #prepare  data
 #
-# Env for Go-Back-SIT
-# ver 0.0.2 15/7/66 22:19
+# Env for Go-Front-SIT
+# ver 0.0.3 15/7/66 22:19
+
 tagname=`cat /var/lib/jenkins/workspace/go-front-sit/package.json |grep "version" |cut -d '"' -f 4`
 releaseFS=`echo $tagname |cut -d ' ' -f 1`
 
-backendUrl='http://172.51.66.196:3000/'
-authUrl='http://172.51.66.196:3000/'
+backendUrl='http://172.51.67.211:3000/'
+authUrl='http://172.51.66.79:3100/'
 stage='SIT' 
 timestamp=$(date)
 
@@ -21,14 +22,15 @@ sed -i -e "s|%timestamp%|${timestamp}|g" /var/lib/jenkins/workspace/go-front-sit
 sed -i -e "s|%release%|${releaseFS}|g" /var/lib/jenkins/workspace/go-front-sit/src/environments/environment.prod.ts
 
 #change filename nginx.conf
-old_filename="nginx.conf.sit"
+old_filename="nginx.conf.uat"
 new_filename="nginx.conf"
 mv "$old_filename" "$new_filename" 
 
 #show nginx.conf
 cat nginx.conf
 
+
 #debug
 cat /var/lib/jenkins/workspace/go-front-sit/src/environments/environment.prod.ts
 
-curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message=SIT prepare Code ${releaseFS} OK" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message=uat prepare Code ${releaseFS} OK" https://notify-api.line.me/api/notify
