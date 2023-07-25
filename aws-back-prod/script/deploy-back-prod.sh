@@ -1,43 +1,27 @@
 #!/bin/bash
+#stop container before
+docker stop $(docker ps --filter 'ancestor=charat/go-back-prod:latest' --format "{{.ID}}")
 
-# ตัวแปรสำหรับชื่อ Container ที่ต้องการตรวจสอบ
-container_name="charat/go-back-prod:latest"
+#ลบ container ที่ไม่ทำงานแล้ว
+docker rm $(docker ps -aqf "status=exited")
 
-# ใช้คำสั่ง docker ps เพื่อดูรายการ Container ที่กำลังรันอยู่
-running_containers=$(docker ps --filter "name=${container_name}" --format "{{.Names}}")
+#remove image <none> and  go-back
+docker images
+docker rmi $(docker images go-back-prod --format "{{.ID}}") -f
+docker rmi -f $(docker images --format "{{.ID}}" --filter "dangling=true")
+docker images
 
-# ตรวจสอบว่ามี Container ที่ต้องการหยุดรันอยู่หรือไม่
-if [[ -n "$running_containers" ]]; then
-    # หากมีให้หยุด Container ที่กำลังรันอยู่
-    docker stop $running_containers
-    echo "หยุด Container $container_name สำเร็จแล้ว"
+#pull and run
+docker pull charat/go-back-prod:latest
+docker run -p 3000:3000 -d charat/go-back-prod:latest
 
-    #ลบ container ที่ไม่ทำงานแล้ว
-    docker rm $(docker ps -aqf "status=exited")
+#wait 5 sec
+sleep 5 &
+wait
 
-    # ตรวจสอบว่ามี image ชื่อ charat/go-back-prod หรือไม่
-    if docker image ls | grep -q charat/go-back-prod; then
-         # ลบ image ชื่อ charat/go-back-prod
-         docker rmi charat/go-back-prod
-    else
-         echo "Image charat/go-back-prod not found. Skipping..."
-    fi
+#get version form api to notify
+latestVer=`curl http://172.51.46.64:3000/api/v1/auth/backRev |cut -d '"' -f 52`
+curl -X POST -H "Authorization: Bearer ${tokenLineAB}" -F "message=UAT deploy latest Version: ${latestVer} OK" https://notify-api.line.me/api/notify
 
-else
-    #pull and run
-    docker pull charat/go-back-prod:latest
-    docker run -p 3100:3100 -d charat/go-back-prod:latest
-
-    #wait 5 sec
-    sleep 5 &
-    wait
-
-    #get version form api to notify
-    latestVer=` curl --location http://172.51.46.64:3000/api/v1/auth/backRev |cut -d '"' -f 4`
-    curl -X POST -H "Authorization: Bearer ${tokenLineAB}" -F "message=PROD deploy latest Version: ${latestVer} OK" https://notify-api.line.me/api/notify
-    
-    #start containter when system restart
-    docker update --restart=always $(docker ps --format "{{.ID}}")  
-fi
-
-
+#start containter when system restart
+docker update --restart=always $(docker ps --format "{{.ID}}")
