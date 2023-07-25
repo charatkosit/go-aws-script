@@ -35,7 +35,9 @@ else
     #get version form api to notify
     latestVer=` curl --location http://172.51.46.64:3000/api/v1/auth/backRev |cut -d '"' -f 4`
     curl -X POST -H "Authorization: Bearer ${tokenLineAB}" -F "message=PROD deploy latest Version: ${latestVer} OK" https://notify-api.line.me/api/notify
-
+    
+    #start containter when system restart
+    docker update --restart=always $(docker ps --format "{{.ID}}")  
 fi
 
 
