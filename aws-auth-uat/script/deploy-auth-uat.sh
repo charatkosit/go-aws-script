@@ -22,3 +22,6 @@ wait
 #get version form api to notify
 latestVer=` curl --location http://172.51.64.139:3100/apiauth/v1/auth/backRev |cut -d '"' -f 4`
 curl -X POST -H "Authorization: Bearer ${tokenLineAB}" -F "message=UAT deploy latest Version: ${latestVer} OK" https://notify-api.line.me/api/notify
+
+#start containter when system restart
+docker update --restart=always $(docker ps --format "{{.ID}}")

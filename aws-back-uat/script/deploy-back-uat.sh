@@ -23,5 +23,5 @@ wait
 latestVer=`curl http://172.51.66.4:3000/api/v1/env |cut -d '"' -f 52`
 curl -X POST -H "Authorization: Bearer ${tokenLineAB}" -F "message=UAT deploy latest Version: ${latestVer} OK" https://notify-api.line.me/api/notify
 
-#stat containter when system restart
+#start containter when system restart
 docker update --restart=always $(docker ps --format "{{.ID}}")
