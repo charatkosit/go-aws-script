@@ -19,9 +19,11 @@ EOF
 #copy new
 mkdir script
 mkdir Initial
+mkdir docker-mysql-pma
 
 cp /home/ec2-user/temp/aws-auth-sit/script/*.* /home/ec2-user/script/
 cp /home/ec2-user/temp/aws-auth-sit/Initial/*.* /home/ec2-user/Initial/
+cp /home/ec2-user/temp/aws-auth-sit/docker-mysql-pma/*.* /home/ec2-user/docker-mysql-pma/
 
 #chmod
 chmod +x /home/ec2-user/script/*.*
