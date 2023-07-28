@@ -1,5 +1,6 @@
 !#/bin/bash
 
+cd ..
 #set environment
 cat >> ~/.bashrc << EOF
 export tokenLineAF=K35RgggwSNxmv2UGVT5mGmO5wAwCAuFQuNodqLh5gCG
