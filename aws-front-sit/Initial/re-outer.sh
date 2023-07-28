@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 cd ..
 git clone https://github.com/charatkosit/go-aws-script.git temp

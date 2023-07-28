@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 # use for update  
 # 
 # deploy-auth-prod.sh
