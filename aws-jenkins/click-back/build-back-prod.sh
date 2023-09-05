@@ -4,9 +4,9 @@ tagnameBS=`cat /var/lib/jenkins/workspace/Click-Prod-Back/package.json |grep "ve
 releaseBS=`echo $tagnameBS |cut -d ' ' -f 1`
 echo $releaseBS
 
-sed -i -e "s/click-back-xxx/Click-Prod-Back/g" /var/lib/jenkins/workspace/Click-Prod-Back/docker-compose.yml
-sed -i -e "s/latest/${releaseBS}/g" /var/lib/jenkins/workspace/Click-Prod-Back/docker-compose.yml
-cat /var/lib/jenkins/workspace/Click-Prod-Back/docker-compose.yml
+# sed -i -e "s/click-back-xxx/Click-Prod-Back/g" /var/lib/jenkins/workspace/Click-Prod-Back/docker-compose.yml
+# sed -i -e "s/latest/${releaseBS}/g" /var/lib/jenkins/workspace/Click-Prod-Back/docker-compose.yml
+# cat /var/lib/jenkins/workspace/Click-Prod-Back/docker-compose.yml
 
 cd  /var/lib/jenkins/workspace/Click-Prod-Back/
 docker-compose build prod
