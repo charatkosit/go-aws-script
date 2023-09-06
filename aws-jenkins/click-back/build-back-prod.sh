@@ -9,6 +9,6 @@ echo $releaseBS
 # cat /var/lib/jenkins/workspace/Click-Back-Prod/docker-compose.yml
 
 cd /var/lib/jenkins/workspace/Click-Back-Prod/
-docker build -t click-back-prod:$releaseFP -f ./Dockerfile .
+docker build -t click-back-prod:$releaseBS -f ./Dockerfile .
 cd /home/ec2-user/
 curl -X POST -H "Authorization: Bearer ${tokenLineJenkinClick}" -F "message=Click-Back-PROD Build Code ${releaseBS} OK" https://notify-api.line.me/api/notify
