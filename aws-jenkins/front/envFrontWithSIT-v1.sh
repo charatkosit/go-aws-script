@@ -7,14 +7,17 @@
 tagname=`cat /var/lib/jenkins/workspace/go-front-sit/package.json |grep "version" |cut -d '"' -f 4`
 releaseFS=`echo $tagname |cut -d ' ' -f 1`
 
-backendUrl='http://172.51.67.211:3000/'
-authUrl='http://172.51.66.79:3100/'
+backendUrl='http://172.51.50.82:3000/'
+authUrl='http://172.51.48.57:3100/'
+logUrl='http://172.51.50.182:3200/'
+
 stage='SIT' 
 timestamp=$(date)
 
 #replace data
 sed -i -e "s|%backendUrl%|${backendUrl}|g" /var/lib/jenkins/workspace/go-front-sit/src/environments/environment.prod.ts
 sed -i -e "s|%authUrl%|${authUrl}|g" /var/lib/jenkins/workspace/go-front-sit/src/environments/environment.prod.ts
+sed -i -e "s|%logUrl%|${logUrl}|g" /var/lib/jenkins/workspace/go-front-sit/src/environments/environment.prod.ts
 # sed -i -e "s|%sapUrl%|${sapUrl}|g" /var/lib/jenkins/workspace/go-front-sit/src/environments/environment.prod.ts
 # sed -i -e "s|%sapApiToken%|${sapApiToken}|g" /var/lib/jenkins/workspace/go-front-sit/src/environments/environment.prod.ts
 sed -i -e "s|%stage%|${stage}|g" /var/lib/jenkins/workspace/go-front-sit/src/environments/environment.prod.ts
