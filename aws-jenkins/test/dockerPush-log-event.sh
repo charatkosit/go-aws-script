@@ -1,13 +1,13 @@
 #!/bin/bash
-releasePBP=`docker images test-log-event --format {{.Tag}} | head -1`
+releasePBP=`docker images logevent --format {{.Tag}} | head -1`
 
-docker image tag test-log-event:$releasePBP test-log-event:latest
-docker image tag test-log-event:$releasePBP charat/test-log-event:$releasePBP 
-docker image tag test-log-event:latest charat/test-log-event:latest
-docker image push --all-tags charat/test-log-event
+docker image tag logevent:$releasePBP logevent:latest
+docker image tag logevent:$releasePBP charat/logevent:$releasePBP 
+docker image tag logevent:latest charat/logevent:latest
+docker image push --all-tags charat/logevent
 
 docker images
-docker rmi $(docker images test-log-event --format "{{.ID}}") -f
+docker rmi $(docker images logevent --format "{{.ID}}") -f
 #docker rmi -f $(docker images --format "{{.ID}}" --filter "dangling=true")
 docker images
 
