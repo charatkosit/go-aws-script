@@ -1,6 +1,6 @@
 #!/bin/bash
-# releasePBP=`docker images test-log-event --format {{.Tag}} | head -1`
-releasePBP=`0.0.1`
+releasePBP=`docker images test-log-event --format {{.Tag}} | head -1`
+
 docker image tag test-log-event:$releasePBP test-log-event:latest
 docker image tag test-log-event:$releasePBP charat/test-log-event:$releasePBP 
 docker image tag test-log-event:latest charat/test-log-event:latest
