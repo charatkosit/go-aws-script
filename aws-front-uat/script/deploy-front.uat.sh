@@ -9,7 +9,7 @@ docker run -p 443:443 \
 -v /home/ec2-user/certbot-certs/live/uat-goplus.ddns.net/privkey.pem:/etc/ssl/private/privkey.pem \
 -d charat/go-front-uat:latest
 # docker run -p 8000:80 -d charat/go-front-uat:latest
-curl -X POST -H "Authorization: Bearer ${tokenLineAF}" -F "message=UAT deploy new version http://uat-goplus.ddns.net:8000" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineAF}" -F "message=UAT deploy new version https://uat-goplus.ddns.net" https://notify-api.line.me/api/notify
 
 #stat containter when system restart
 docker update --restart=always $(docker ps --format "{{.ID}}")
