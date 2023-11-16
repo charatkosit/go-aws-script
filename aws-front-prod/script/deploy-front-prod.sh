@@ -7,7 +7,7 @@ docker pull charat/go-front-prod:latest
 docker run -p 80:80 -p 443:443 \
 -v /home/ec2-user/certbot-certs/live/go.gpautoparts.co.th/fullchain.pem:/etc/ssl/certs/fullchain.pem \
 -v /home/ec2-user/certbot-certs/live/go.gpautoparts.co.th/privkey.pem:/etc/ssl/private/privkey.pem \
--d charat/go-front-sit:latest
+-d charat/go-front-prod:latest
 # docker run -p 8000:80 -d charat/go-front-prod:latest
 curl -X POST -H "Authorization: Bearer ${tokenLineAF}" -F "message=PROD deploy new version https://go.gpautoparts.co.th" https://notify-api.line.me/api/notify
 
