@@ -10,6 +10,7 @@ releaseFS=`echo $tagname |cut -d ' ' -f 1`
 backendUrl='http://172.51.50.82:3000/'
 authUrl='http://172.51.48.57:3100/'
 logUrl='http://172.51.50.182:3200/'
+hotjar_id='3737456'
 
 stage='SIT' 
 timestamp=$(date)
