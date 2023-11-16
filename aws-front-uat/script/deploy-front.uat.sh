@@ -4,7 +4,7 @@ docker rmi $(docker images --format "{{.ID}}" --filter "dangling=true" | head -1
 docker stop $(docker ps --filter "ancestor=charat/go-front-uat:latest" -q)
 docker rm $(docker ps --filter "ancestor=charat/go-front-uat:latest" -aq)
 docker pull charat/go-front-uat:latest
-docker run -p 443:443 \
+docker run -p 80:80 -p 443:443 \
 -v /home/ec2-user/certbot-certs/live/uat-goplus.ddns.net/fullchain.pem:/etc/ssl/certs/fullchain.pem \
 -v /home/ec2-user/certbot-certs/live/uat-goplus.ddns.net/privkey.pem:/etc/ssl/private/privkey.pem \
 -d charat/go-front-uat:latest
