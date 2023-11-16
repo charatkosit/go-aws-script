@@ -9,7 +9,7 @@ releaseFS=`echo $tagname |cut -d ' ' -f 1`
 backendUrl='http://172.51.64.46:3000/'
 authUrl='http://172.51.67.165:3100/'
 logUrl='http://172.51.50.182:3200/'
-hotjar_id='3738131'    #gosi id
+hotjar_id='3738131'    #gosi id  https://go.gpautoplus.co.th
 stage='PROD' 
 timestamp=$(date)
 

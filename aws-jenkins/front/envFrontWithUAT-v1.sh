@@ -10,7 +10,7 @@ releaseFS=`echo $tagname |cut -d ' ' -f 1`
 backendUrl='http://172.51.66.4:3000/'
 authUrl='http://172.51.64.139:3100/'
 logUrl='http://172.51.50.182:3200/'
-hotjar_id='3738751'
+hotjar_id='3738751' # https://sit-goplus.ddns.net
 
 stage='UAT' 
 timestamp=$(date)

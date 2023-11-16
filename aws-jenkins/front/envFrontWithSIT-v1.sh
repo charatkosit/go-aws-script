@@ -10,7 +10,7 @@ releaseFS=`echo $tagname |cut -d ' ' -f 1`
 backendUrl='http://172.51.50.82:3000/'
 authUrl='http://172.51.48.57:3100/'
 logUrl='http://172.51.50.182:3200/'
-hotjar_id='3737456'
+hotjar_id='3737456'   # https://sit-goplus.ddns.net
 
 stage='SIT' 
 timestamp=$(date)
@@ -19,7 +19,7 @@ timestamp=$(date)
 sed -i -e "s|%backendUrl%|${backendUrl}|g" /var/lib/jenkins/workspace/go-front-sit/src/environments/environment.prod.ts
 sed -i -e "s|%authUrl%|${authUrl}|g" /var/lib/jenkins/workspace/go-front-sit/src/environments/environment.prod.ts
 sed -i -e "s|%logUrl%|${logUrl}|g" /var/lib/jenkins/workspace/go-front-sit/src/environments/environment.prod.ts
-# sed -i -e "s|%sapUrl%|${sapUrl}|g" /var/lib/jenkins/workspace/go-front-sit/src/environments/environment.prod.ts
+sed -i -e "s|1234567|${hotjar_id}|g" /var/lib/jenkins/workspace/go-front-sit/src/index.html
 # sed -i -e "s|%sapApiToken%|${sapApiToken}|g" /var/lib/jenkins/workspace/go-front-sit/src/environments/environment.prod.ts
 sed -i -e "s|%stage%|${stage}|g" /var/lib/jenkins/workspace/go-front-sit/src/environments/environment.prod.ts
 sed -i -e "s|%timestamp%|${timestamp}|g" /var/lib/jenkins/workspace/go-front-sit/src/environments/environment.prod.ts
