@@ -1,2 +1,2 @@
 #!/bin/bash
-curl --location http://172.51.66.79:3100/apiauth/v1/auth/backRev
+curl --location http://13.214.25.107:3300/apiepc/v1/version

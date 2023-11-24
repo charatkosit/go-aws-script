@@ -13,14 +13,14 @@ docker images
 
 #pull and run
 docker pull charat/go-epc-sit:latest
-docker run -p 3100:3100 -d charat/go-epc-sit:latest
+docker run -p 3300:3300 -d charat/go-epc-sit:latest
 
 #wait 5 sec
 sleep 5 &
 wait
 
 #get version form api to notify
-latestVer=` curl --location http://172.51.51.153:3300/apiauth/v1/auth/backRev |cut -d '"' -f 4`
+latestVer=` curl --location http://13.214.25.107:3300/epc/v1/version |cut -d '"' -f 4`
 curl -X POST -H "Authorization: Bearer ${tokenLineAB}" -F "message=SIT deploy latest Version: ${latestVer} OK" https://notify-api.line.me/api/notify
 
 #start containter when system restart

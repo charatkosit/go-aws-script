@@ -8,14 +8,14 @@ if docker ps -q >/dev/null 2>&1; then
     # ลบ container ที่ไม่ทำงานแล้วทั้งหมด
     docker rm $(docker ps -aqf "status=exited")
 
-    # ลบ images images go-auth-sit
+    # ลบ images images go-epc-sit
  
-    # ตรวจสอบว่ามี image ชื่อ charat/go-auth-sit หรือไม่
-    if docker image ls | grep -q charat/go-auth-sit; then
-         # ลบ image ชื่อ charat/go-auth-sit
-         docker rmi charat/go-auth-sit
+    # ตรวจสอบว่ามี image ชื่อ charat/go-epc-sit หรือไม่
+    if docker image ls | grep -q charat/go-epc-sit; then
+         # ลบ image ชื่อ charat/go-epc-sit
+         docker rmi charat/go-epc-sit
     else
-         echo "Image charat/go-auth-sit not found. Skipping..."
+         echo "Image charat/go-epc-sit not found. Skipping..."
     fi
 else
     # หากไม่มี container ทำงานอยู่
