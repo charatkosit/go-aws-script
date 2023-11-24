@@ -9,8 +9,8 @@
 tagnameBS=`cat /var/lib/jenkins/workspace/go-back-sit/package.json |grep "version" |cut -d '"' -f 4`
 releaseBS=`echo $tagnameBS |cut -d ' ' -f 1`
 
-# 172.51.67.211 is Go.Back.SIT
-sed -i -e "s|127.0.0.1|172.51.67.211|g" /var/lib/jenkins/workspace/go-back-sit/src/environments/environment.ts
+# 172.51.67.211 is Go.Back.SIT.Pub
+sed -i -e "s|127.0.0.1|172.51.50.82|g" /var/lib/jenkins/workspace/go-back-sit/src/environments/environment.ts
 sed -i -e "s|Back-Dev|${releaseBS}|g" /var/lib/jenkins/workspace/go-back-sit/src/environments/environment.ts
 #debug
 cat /var/lib/jenkins/workspace/go-back-sit/src/environments/environment.ts
