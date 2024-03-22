@@ -1,13 +1,13 @@
 #!/bin/bash
-releaseFS=`docker images go-front-sit-FeatA --format {{.Tag}} | head -1`
+releaseFS=`docker images go-front-sit-feata --format {{.Tag}} | head -1`
 
-docker image tag go-front-sit-FeatA:$releaseFS go-front-sit-FeatA:latest
-docker image tag go-front-sit-FeatA:$releaseFS charat/go-front-sit-FeatA:$releaseFS 
-docker image tag go-front-sit-FeatA:latest charat/go-front-sit-FeatA:latest
-docker image push --all-tags charat/go-front-sit-FeatA
+docker image tag go-front-sit-FeatA:$releaseFS go-front-sit-feata:latest
+docker image tag go-front-sit-FeatA:$releaseFS charat/go-front-sit-feata:$releaseFS 
+docker image tag go-front-sit-FeatA:latest charat/go-front-sit-feata:latest
+docker image push --all-tags charat/go-front-sit-feata
 
 docker images
-docker rmi $(docker images go-front-sit-FeatA --format "{{.ID}}") -f
+docker rmi $(docker images go-front-sit-feata --format "{{.ID}}") -f
 
 #Looking for Dangling images
 dangling_images=$(docker images --format "{{.ID}}" --filter "dangling=true")
