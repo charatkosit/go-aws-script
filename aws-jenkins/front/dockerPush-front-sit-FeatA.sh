@@ -1,9 +1,9 @@
 #!/bin/bash
 releaseFS=`docker images go-front-sit-feata --format {{.Tag}} | head -1`
 
-docker image tag go-front-sit-FeatA:$releaseFS go-front-sit-feata:latest
-docker image tag go-front-sit-FeatA:$releaseFS charat/go-front-sit-feata:$releaseFS 
-docker image tag go-front-sit-FeatA:latest charat/go-front-sit-feata:latest
+docker image tag go-front-sit-feata:$releaseFS go-front-sit-feata:latest
+docker image tag go-front-sit-feata:$releaseFS charat/go-front-sit-feata:$releaseFS 
+docker image tag go-front-sit-feata:latest charat/go-front-sit-feata:latest
 docker image push --all-tags charat/go-front-sit-feata
 
 docker images
