@@ -5,7 +5,7 @@ releaseFS=`echo $tagname |cut -d ' ' -f 1`
 echo $releaseFS
 
 cd /var/lib/jenkins/workspace/go-front-sit-FeatA/
-docker build -t go-front-sit:$releaseFS -f ./Dockerfile .
+docker build -t go-front-sit-feata:$releaseFS -f ./Dockerfile .
 cd /home/ec2-user/
 
 
