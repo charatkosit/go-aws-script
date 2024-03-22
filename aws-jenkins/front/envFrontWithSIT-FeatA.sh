@@ -32,4 +32,4 @@ cat nginx.conf
 #debug
 cat /var/lib/jenkins/workspace/go-front-sit-FeatA/src/environments/environment.prod.ts
 
-curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message=SIT prepare Code ${releaseFS} OK" https://notify-api.line.me/api/notify
+curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message=SIT-FeatA prepare Code ${releaseFS} OK" https://notify-api.line.me/api/notify
