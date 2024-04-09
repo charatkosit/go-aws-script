@@ -9,8 +9,8 @@ mkdir script
 mkdir docker-compose
 
 #copy new
-cp /home/ec2-user/temp/aws-rabbitmq/script/*.* /home/ec2-user/script/
-cp /home/ec2-user/temp/aws-rabbitmq/*.* /home/ec2-user/docker-compose/
+cp /home/ec2-user/temp/aws-front-prod/script/*.* /home/ec2-user/script/
+cp /home/ec2-user/temp/aws-front-prod/Initial/*.* /home/ec2-user/Initial/
 
 
 #chmod
