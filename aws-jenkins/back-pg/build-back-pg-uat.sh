@@ -4,8 +4,8 @@ tagnameBU=`cat /var/lib/jenkins/workspace/go-back-pg-uat/package.json |grep "ver
 releaseBU=`echo $tagnameBU |cut -d ' ' -f 1`
 echo $releaseBU
 
-sed -i -e "s/go-back-yyy/go-back-pg-uat/g" /var/lib/jenkins/workspace/go-back-pg-uat/docker-compose.yml
-sed -i -e "s/go-back-xxx/go-back-pg-uat/g" /var/lib/jenkins/workspace/go-back-pg-uat/docker-compose.yml
+sed -i -e "s/go-back-pg-yyy/go-back-pg-uat/g" /var/lib/jenkins/workspace/go-back-pg-uat/docker-compose.yml
+sed -i -e "s/go-back-pg-xxx/go-back-pg-uat/g" /var/lib/jenkins/workspace/go-back-pg-uat/docker-compose.yml
 sed -i -e "s/latest/${releaseBU}/g" /var/lib/jenkins/workspace/go-back-pg-uat/docker-compose.yml
 cat /var/lib/jenkins/workspace/go-back-pg-uat/docker-compose.yml
 
