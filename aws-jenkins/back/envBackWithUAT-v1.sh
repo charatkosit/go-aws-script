@@ -10,7 +10,7 @@ tagnameBU=`cat /var/lib/jenkins/workspace/go-back-uat/package.json |grep "versio
 releaseBU=`echo $tagnameBU |cut -d ' ' -f 1`
 
 #172.41.62.164  is localhost  Go.Back.UAT (back+db)
-sed -i -e "s|127.0.0.1|172.51.66.4|g" /var/lib/jenkins/workspace/go-back-uat/src/environments/environment.ts
+sed -i -e "s|127.0.0.1|172.51.69.242|g" /var/lib/jenkins/workspace/go-back-uat/src/environments/environment.ts
 sed -i -e "s|Back-Dev|${releaseBU}|g" /var/lib/jenkins/workspace/go-back-uat/src/environments/environment.ts
 #debug
 cat /var/lib/jenkins/workspace/go-back-uat/src/environments/environment.ts
