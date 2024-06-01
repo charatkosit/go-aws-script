@@ -4,8 +4,8 @@ tagname=`cat /var/lib/jenkins/workspace/gw-front-prod/package.json |grep "versio
 releaseFS=`echo $tagname |cut -d ' ' -f 1`
 echo $releaseFS
 
-cd /var/lib/jenkins/workspace/go-gw-front-prod/
-docker build -t go-front-prod:$releaseFS -f ./Dockerfile .
+cd /var/lib/jenkins/workspace/gw-front-prod/
+docker build -t gw-front-prod:$releaseFS -f ./Dockerfile .
 cd /home/ec2-user/
 
 
