@@ -19,9 +19,9 @@ mkdir script
 mkdir Initial
 mkdir docker-mysql-pma
 
-cp /home/ec2-user/temp/aws-gw-back-prod/script/*.* /home/ec2-user/script/
-cp /home/ec2-user/temp/aws-gw-back-prod/Initial/*.* /home/ec2-user/Initial/
-cp /home/ec2-user/temp/aws-gw-back-prod/docker-mysql-pma/*.* /home/ec2-user/docker-mysql-pwa/
+cp /home/ec2-user/temp/aws-gw-back-pg-prod/script/*.* /home/ec2-user/script/
+cp /home/ec2-user/temp/aws-gw-back-pg-prod/Initial/*.* /home/ec2-user/Initial/
+cp /home/ec2-user/temp/aws-gw-back-pg-prod/docker-mysql-pma/*.* /home/ec2-user/docker-postgresql/
 
 
 #chmod
