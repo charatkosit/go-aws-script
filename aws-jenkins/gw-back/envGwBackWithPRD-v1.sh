@@ -9,8 +9,8 @@
 tagnameBP=`cat /var/lib/jenkins/workspace/gw-back-prod/package.json |grep "version" |cut -d '"' -f 4`
 releaseBP=`echo $tagnameBP |cut -d ' ' -f 1`
 
-sed -i -e "s|127.0.0.1|172.51.64.46|g" /var/lib/jenkins/workspace/gw-back-prod/src/environments/environment.ts
-sed -i -e "s|Back-Dev|${releaseBP}|g" /var/lib/jenkins/workspace/gw-back-prod/src/environments/environment.ts
+sed -i -e "s|127.0.0.1|172.51.51.248|g" /var/lib/jenkins/workspace/gw-back-prod/src/environments/environment.ts
+sed -i -e "s|GW-Back-Dev|${releaseBP}|g" /var/lib/jenkins/workspace/gw-back-prod/src/environments/environment.ts
 #debug
 cat /var/lib/jenkins/workspace/gw-back-prod/src/environments/environment.ts
 

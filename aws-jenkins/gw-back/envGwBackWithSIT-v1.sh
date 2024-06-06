@@ -11,7 +11,7 @@ releaseBS=`echo $tagnameBS |cut -d ' ' -f 1`
 
 # 172.51.67.211 is Go.Back.SIT.Pub
 sed -i -e "s|127.0.0.1|172.51.50.82|g" /var/lib/jenkins/workspace/gw-back-sit/src/environments/environment.ts
-sed -i -e "s|Back-Dev|${releaseBS}|g" /var/lib/jenkins/workspace/gw-back-sit/src/environments/environment.ts
+sed -i -e "s|GW-Back-Dev|${releaseBS}|g" /var/lib/jenkins/workspace/gw-back-sit/src/environments/environment.ts
 #debug
 cat /var/lib/jenkins/workspace/gw-back-sit/src/environments/environment.ts
 
