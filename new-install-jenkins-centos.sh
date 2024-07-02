@@ -53,7 +53,7 @@ jenkinsPass=`cat /var/lib/jenkins/secrets/initialAdminPassword`
 # docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /opt/portainer_data:/data portainer/portainer
 
 #copy
-cp /home/charat/temp/update-aws-jenkins.sh /home/charat 
+cp /home/charat/temp/update-aws-jenkins-centos.sh /home/charat 
 cp /home/charat/temp/runfirst.sh /home/charat
 
 mkdir /home/charat/script
@@ -67,11 +67,11 @@ cp /home/charat/temp/aws-jenkins/auth/*.* /home/charat/script/auth
 chmod +x /home/charat/script/front/*.*
 chmod +x /home/charat/script/back/*.*
 chmod +x /home/charat/script/auth/*.*
-chmod +x /home/charat/update-aws-jenkins.sh
+chmod +x /home/charat/update-aws-jenkins-centos.sh
 chmod +x /home/charat/runfirst.sh
 
 rm -rf temp
-rm -rf new-install-jenkins.sh
+rm -rf new-install-jenkins-centos.sh
 
 curl -X POST -H "Authorization: Bearer ${tokenLineF}" -F "message= pass jenkins ${jenkinsPass} ok" https://notify-api.line.me/api/notify
 curl -X POST -H "Authorization: Bearer ${tokenLineB}" -F "message= Back ok" https://notify-api.line.me/api/notify
