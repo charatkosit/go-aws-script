@@ -4,12 +4,14 @@
 ln -sf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
 date
 
-#install docker
+#ติดตั้ง Docker
 dnf update -y
-yum install docker -y
-service docker start
-systemctl enable --now docker
-systemctl is-enabled docker
+dnf install -y yum-utils
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+dnf install docker-ce docker-ce-cli containerd.io -y
+systemctl start docker
+systemctl enable docker
+docker --version
 docker images
 chmod 777 /var/run/docker.sock
 
@@ -82,6 +84,15 @@ chmod +x /home/charat/script/back/*.*
 chmod +x /home/charat/script/auth/*.*
 chmod +x /home/charat/update-aws-jenkins-centos.sh
 chmod +x /home/charat/runfirst.sh
+
+chown -R jenkins:jenkins /home/charat/script/
+chmod -R +x /home/charat/script/
+chown -R jenkins:jenkins /var/lib/jenkins/.docker
+chmod -R 755 /var/lib/jenkins/.docker
+chmod +x /var/lib/jenkins/
+chmod +x /var/lib/
+
+chmod 666 /var/run/docker.sock
 
 rm -rf temp
 rm -rf new-install-jenkins-centos.sh
